@@ -1,0 +1,23 @@
+##This file contains domain-specific changes to the main sentiment dictionary and evaluative terms.
+##Changes to the main sentiment dictionary are for words that have a different sentiment for the domain
+## or are non-sentiment evaluative words in the domain that are not associated with any particular feature.
+##Domain-specific changes to the main sentiment dictionary take the form
+##Word <tab> sentiment strength (from -5,-4,-3,-2,1,2,3,4,5)
+## e.g., heavy	-3
+##Or phrase <tab> sentiment strength (from -5,-4,-3,-2,1,2,3,4,5) for idiomatic phrases
+##Evaluative terms take the form:
+##Object <tab> evaluative term <tab> sentiment strength (from -5,-4,-3,-2,1,2,3,4,5)
+## e.g., screen	small	-3 (note to mike: very/little)
+##Lines starting with two hashes are ignored
+
+##Sentiment dictionary additions and changes
+baton*	-3
+beat*	-3
+hit*	-3
+
+##Idiomatic phrases
+start a riot	-4
+
+#Evaluative terms (note to mike: very/little)
+police	heavy	-2
+police	insensitive	-2

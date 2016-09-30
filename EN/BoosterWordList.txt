@@ -1,0 +1,44 @@
+absolutely	1
+astoundingly	2
+breathtakingly	2
+complete	1	9 June 2010
+completely	1	9 June 2010
+consistently	1
+could	-1	9 June 2010
+dazzlingly	1
+definitely	1
+devastatingly	2	11 June 2012
+did	-1	9 June 2010 [past is less strong]
+enormously	1
+especially	1	9 June 2010
+exceptionally	2
+extraordinarily	2
+extremely	2
+fuckin	2
+fucking	2
+genuinely	1
+hugely	2
+incredibly	2
+just	-1
+may	-1	9 June 2010
+might	-1	9 June 2010
+ought	-1	9 June 2010
+outstandingly	2
+overwhelmingly	2
+phenomenally	2
+really	1	9 June 2010
+remarkably	1
+should	-1	9 June 2010
+slightly	-1	9 June 2010
+so	0	Was 1 but sometimes used as neutral or mild term
+some	-1
+sometimes	-1	9 June 2010
+spectacularly	2
+sum	-1
+super	1	June 2012
+total	1	9 June 2010
+totally	1	9 June 2010
+tremendously	2
+ultra	1
+very	1
+would	-1	9 June 2010

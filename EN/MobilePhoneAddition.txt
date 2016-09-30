@@ -1,0 +1,34 @@
+##This file contains domain-specific changes to the main sentiment dictionary and evaluative terms.
+##Changes to the main sentiment dictionary are for words that have a different sentiment for the domain
+## or are non-sentiment evaluative words in the domain that are not associated with any particular feature.
+##Domain-specific changes to the main sentiment dictionary take the form
+##Word <tab> sentiment strength (from -5,-4,-3,-2,1,2,3,4,5)
+## e.g., heavy	-3
+##Or phrase <tab> sentiment strength (from -5,-4,-3,-2,1,2,3,4,5) for idiomatic phrases
+##Evaluative terms take the form:
+##Object <tab> evaluative term <tab> sentiment strength (from -5,-4,-3,-2,1,2,3,4,5)
+## e.g., screen	small	-3 (note to mike: very/little)
+##Lines starting with two hashes are ignored
+
+##Sentiment dictionary additions and changes
+heavy	-3
+useful	3
+
+##Idiomatic phrases
+many features	4
+lots of features	4
+
+#Evaluative terms
+screen	small	-3
+battery	small	2
+battery	tiny	2
+battery	big	-2
+battery	large	-2
+battery	huge	-3
+##reception	good	3	These terms are not needed since good/bad/poor are in the sentiment dictionary already
+##reception	excellent	3
+##reception	bad	-3
+##reception	poor	-3
+reception	weak	-3
+signal	weak	-3
+signal	strong	3

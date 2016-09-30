@@ -1,0 +1,53 @@
+##This file contains domain-specific changes to the main sentiment dictionary and evaluative terms.
+##Changes to the main sentiment dictionary are for words that have a different sentiment for the domain
+## or are non-sentiment evaluative words in the domain that are not associated with any particular feature.
+##Domain-specific changes to the main sentiment dictionary take the form
+##Word <tab> sentiment strength (from -5,-4,-3,-2,1,2,3,4,5)
+## e.g., heavy	-3
+##Or phrase <tab> sentiment strength (from -5,-4,-3,-2,1,2,3,4,5) for idiomatic phrases
+##Evaluative terms take the form:
+##Object <tab> evaluative term <tab> sentiment strength (from -5,-4,-3,-2,1,2,3,4,5)
+## e.g., screen	small	-3 (note to mike: very/little)
+##Lines starting with two hashes are ignored
+
+##Sentiment dictionary additions and changes
+abhorrence	-3
+appreciate	2
+arrests	-2
+bloody	-3
+cliches	-2
+deserving	2
+diligent	2
+discrimination	-2
+disown	-2
+flawed	-3
+honest	2
+hope	2
+huzah	3
+indefensible	-2
+interesting	1
+merits	1
+momentum	2
+nicking	-2
+please	2
+shoplifter	-2
+superb	4
+supportive	2
+thrilled	3
+unsuitable	-2
+violence	-3
+vulnerable	-2
+warn	-2
+wins	2
+win	3
+won	3
+wins	3
+lied	-4
+lies	-4
+liar	-4
+lose	-4
+
+##Idiomatic phrases
+left early	-3
+
+#Evaluative terms

@@ -1,0 +1,71 @@
+##This file contains domain-specific changes to the main sentiment dictionary and evaluative terms.
+##Changes to the main sentiment dictionary are for words that have a different sentiment for the domain
+## or are non-sentiment evaluative words in the domain that are not associated with any particular feature.
+##Domain-specific changes to the main sentiment dictionary take the form
+##Word <tab> sentiment strength (from -5,-4,-3,-2,1,2,3,4,5)
+## e.g., heavy	-3
+##Or phrase <tab> sentiment strength (from -5,-4,-3,-2,1,2,3,4,5) for idiomatic phrases
+##Evaluative terms take the form:
+##Object <tab> evaluative term <tab> sentiment strength (from -5,-4,-3,-2,1,2,3,4,5)
+## e.g., screen	small	-3 (note to mike: very/little)
+##Lines starting with two hashes are ignored
+
+##Sentiment dictionary additions and changes
+fright*	3
+scary	3
+terrified	2	
+terrifies	2	
+terrify	2	
+terrifyi*	2	
+terror	1
+terror*	1	
+terrori*	-3
+horr*	1	
+dead	1
+death	1
+murder*	1
+kidnap	1
+kill	1
+killed	1	
+killer	1
+killing	1
+knife	1
+gun*	1
+gunmen	1
+shoot*	1
+hurt*	1
+fight*	1
+battle	1
+war	1
+interesting	3
+fascinat*	4
+surpris*	2
+bore*	-4
+boring*	-4	
+dull	-3
+believable	3
+realistic	2
+unrealistic	-2
+unusual	2
+watchable	3
+unwatchable	-5
+scandal*	1
+sad	1	##sad film??? (ignore col 3 if ##)
+sadness	1
+amateur*	-2
+
+##Idiomatic phrases
+left early	-5
+leave early	-5
+too long	-3
+walk out	-5
+walked out	-5
+walking out	-5
+must see	4
+must watch	4
+
+#Evaluative terms (note to mike: very/little)
+plot	engaging	3
+script	engaging	3
+story	engaging	3
+##acting	good	3	##Don't need because good is already in the sentiment dictionary
