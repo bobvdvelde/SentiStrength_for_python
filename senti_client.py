@@ -235,7 +235,7 @@ class multisent():
         self.get_status()
 
     def stop_all(self):
-        for instance in self.instances:
+        while self.instances:
             self.stop_server(pid=instance['pid'])
 
     def run_batch(self, texts):
