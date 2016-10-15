@@ -55,6 +55,11 @@ from joblib import Parallel, delayed
 logging.basicConfig(level='INFO')
 logger = logging.getLogger(__file__)
 
+if not 'SentiStrengthCom.jar' in os.listdir('.'):
+	print("You need 'SentiStrengthCom.jar' to use this wrapper!")
+	print("because this version is not freely available, it was not packaged with this wrapper :-( ")
+	print("get it from http://sentistrength.wlv.ac.uk/ by emailing Professor Thelwall")
+	
 
 class sentistrength():
 
@@ -74,16 +79,16 @@ class sentistrength():
             time.sleep(1)
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         try:
-            sock.connect(('0.0.0.0',port))
+            sock.connect(('0.0.0.0',self.port))
         except ConnectionRefusedError:
             try:
                 print("server not found, trying to launch server")
                 self.sentistrength = subprocess.Popen(["java -jar SentiStrengthCom.jar sentidata ./%s/ listen 8181 trinary" %language], shell=True, preexec_fn=os.setsid)
                 time.sleep(1)
-                sock.connect(('0.0.0.0',port))
+                sock.connect(('0.0.0.0',self.port))
                 self.language = language
             except:
-                raise "unable to start server, is there a process already running? "
+                raise Exception("unable to start server, is there a process already running? ")
         return sock
     
 
