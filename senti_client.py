@@ -2,8 +2,8 @@
 '''
 Made for python 3.X
 assumes sentistrength is available in the current folder, 
-i.e.: the folder contains 'SentiStrengthCom.jar'. The 
-language files should be in folders with 2-letter ISO 
+i.e.: the folder contains 'SentiStrengthCom.jar'. 
+The language files should be in folders with 2-letter ISO 
 language codes. 
 
 AR = Arabic
@@ -25,14 +25,24 @@ TU = Turkish
 Current language sets (except EN) drawn from https://github.com/felipebravom/StaticTwitterSent/tree/master/extra/SentiStrength
 Sentistrength java file can be obtained from sentistrength.wlv.ac.uk/ by emailing Professor Thelwall (address on website) 
 
-Example use:
+Example use (single-core client):
 
->> senti = sentistrength('EN')
->> res = senti.get_sentiment('I love using sentistrength!')
->> print(res)
+>>> senti = sentistrength('EN')
+>>> res = senti.get_sentiment('I love using sentistrength!')
+>>> print(res)
+
+... {'negative': '-1', 'neutral': '1', 'positive': '4'}
+
+Example use (multi-core client):
+
+>>> ms    = multisent('EN')
+>>> texts = ['This is great!!'] * 10000
+>>> res   = ms.run_stream(texts)
+>>> print(res[0])
+
+... {'negative': '-1', 'neutral': '1', 'positive': '4'}
+
  
-{'negative': '-1', 'neutral': '1', 'positive': '4'}
-
 '''
 import logging
 import socket
