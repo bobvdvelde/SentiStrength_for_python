@@ -56,9 +56,9 @@ logging.basicConfig(level='INFO')
 logger = logging.getLogger(__file__)
 
 if not 'SentiStrengthCom.jar' in os.listdir('.'):
-	print("You need 'SentiStrengthCom.jar' to use this wrapper!")
-	print("because this version is not freely available, it was not packaged with this wrapper :-( ")
-	print("get it from http://sentistrength.wlv.ac.uk/ by emailing Professor Thelwall")
+	logger.warning("You need 'SentiStrengthCom.jar' to use this wrapper!")
+	logger.warning("because this version is not freely available, it was not packaged with this wrapper :-( ")
+	logger.warning("get it from http://sentistrength.wlv.ac.uk/ by emailing Professor Thelwall")
 	
 
 class sentistrength():
@@ -74,7 +74,7 @@ class sentistrength():
 
     def run_server(self, language):
         if language!=self.language and self.sentistrength:
-            print("wrong language running, trying to switch")
+            logger.warning("wrong language running, trying to switch")
             os.killpg(self.sentistrength.pid,15)
             time.sleep(1)
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -82,7 +82,7 @@ class sentistrength():
             sock.connect(('0.0.0.0',self.port))
         except ConnectionRefusedError:
             try:
-                print("server not found, trying to launch server")
+                logger.info("server not found, trying to launch server")
                 self.sentistrength = subprocess.Popen(["java -jar SentiStrengthCom.jar sentidata ./%s/ listen 8181 trinary" %language], shell=True, preexec_fn=os.setsid)
                 time.sleep(1)
                 sock.connect(('0.0.0.0',self.port))
@@ -182,7 +182,7 @@ class multisent():
             port = self._top_port()+1
         if check_exists(port): 
             logger.info("server at {port} already exists!".format(**locals()))
-            start_server(port+1)
+            self.start_server(port+1)
             return 
         instance = subprocess.Popen(["java -jar SentiStrengthCom.jar sentidata ./%s/ listen %s trinary" %(self.language,port)], 
                                     shell=True, preexec_fn=os.setsid)
@@ -251,6 +251,7 @@ class multisent():
 
     def stop_all(self):
         while self.instances:
+            instance = self.instances[0]
             self.stop_server(pid=instance['pid'])
 
     def run_batch(self, texts):
