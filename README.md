@@ -42,8 +42,14 @@ Example use (multi-core client):
 >>> from senti_client import multisent
 >>> ms    = multisent('EN')
 >>> texts = ['This is great!!'] * 10000
->>> res   = ms.run_stream(texts)
+>>> res   = ms.run_batch(texts) # push all texts and get the results in one go
 >>> print(res[0])
+
+... {'negative': '-1', 'neutral': '1', 'positive': '4'}
+# OR, if you do not want all texts & results in memory
+>>> res   = ms.run_stream(texts) # pushes texts one-at-a-time for out-of-memory processing
+>>> for i in res:
+>>>     print(i) # do what you want
 
 ... {'negative': '-1', 'neutral': '1', 'positive': '4'}
 ```
